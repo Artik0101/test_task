@@ -1,3 +1,6 @@
+# pip install prettytable
+# pip install BeautifulSoup
+# pip install requests
 import requests
 
 from prettytable import PrettyTable
