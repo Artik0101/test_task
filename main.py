@@ -1,5 +1,5 @@
 # pip install prettytable
-# pip install BeautifulSoup
+# pip install BeautifulSoup4
 # pip install requests
 import requests
 
@@ -63,6 +63,5 @@ def get_index_from_url(url):
         get_items_index()
     else:
         print(response.status_code)
-
-get_items_index()
 get_countries_list("https://restcountries.com/v3.1/all")
+get_index_from_url('https://www.ebay.com/itm/365015831151?_trkparms=amclksrc%3DITM%26aid%3D777008%26algo%3DPERSONAL.TOPIC%26ao%3D1%26asc%3D20230823115209%26meid%3Db6e44c339e2945c0af53d9e3fbaaa2f3%26pid%3D101800%26rk%3D1%26rkt%3D1%26itm%3D365015831151%26pmt%3D0%26noa%3D1%26pg%3D4375194%26algv%3DRecentlyViewedItemsV2SignedOut&_trksid=p4375194.c101800.m5481&_trkparms=parentrq%3Ad588b1771900acda67b4e945fffe6c4e%7Cpageci%3A3f1fb29c-4767-11ef-a5e1-866f8ac221f4%7Ciid%3A1%7Cvlpname%3Avlp_homepage')
