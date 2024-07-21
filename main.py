@@ -17,7 +17,7 @@ def get_countries_list(url):
             table.add_row([country['name']['common'], country.get('capital',["N/A"])[0],  country['flags']['png']])
     print(table)
 
-def get_items_index():
+def get_items_index(*url):
             
     items_info = []
     with open ('index.html') as file:
@@ -30,6 +30,7 @@ def get_items_index():
     photo = soup.find('img')
     title = ' '.join(soup.find('h1',class_='x-item-title__mainTitle').text.split()) # type: ignore
     items_info.append({
+        'url':url,
         'title':title,
         'price':price,
         'shipping':shipping,
@@ -40,7 +41,7 @@ def get_items_index():
 
 
 def get_index_from_url(url):
-    
+    URL = url
     headers = {
         'Accept':'*/*',
         "User-Agent" : "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0.0.0 Safari/537.36"
@@ -60,7 +61,7 @@ def get_index_from_url(url):
         src = response.text
         with open('index.html','w') as file:
             file.write(src)
-        get_items_index()
+        get_items_index(URL)
     else:
         print(response.status_code)
 get_countries_list("https://restcountries.com/v3.1/all")
